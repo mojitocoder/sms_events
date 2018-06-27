@@ -24,7 +24,7 @@ defmodule SmsEventsWeb.Router do
   scope "/twilio", SmsEventsWeb do
     pipe_through(:api)
 
-    get("/", TwilioController, :api_text)
+    post("/sms_received", TwilioController, :sms_received)
 
     get("/text", TwilioController, :api_text)
 

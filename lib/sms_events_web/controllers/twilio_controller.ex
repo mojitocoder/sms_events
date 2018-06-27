@@ -8,4 +8,9 @@ defmodule SmsEventsWeb.TwilioController do
   def api_json(conn, _param) do
     json(conn, %{id: 1, name: "Quynh", job: "Developer"})
   end
+
+  def sms_received(conn, param) do
+    IO.inspect(param)
+    conn |> send_resp(204, "")
+  end
 end
