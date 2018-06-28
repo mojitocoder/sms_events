@@ -18,7 +18,8 @@ defmodule SmsEventsWeb.TwilioController do
     |> Poison.encode!()
     |> publish(@topic)
 
-    json(conn |> put_status(:no_content), "")
+    json(conn |> put_status(:no_content), "{}")
+    # conn |> send_resp(204, "")
   end
 
   defp publish(message, topic) do
