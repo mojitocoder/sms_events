@@ -11,6 +11,7 @@ defmodule SmsEventsWeb.TwilioController do
 
   def sms_received(conn, param) do
     IO.inspect(param)
-    conn |> send_resp(204, "")
+    # conn |> send_resp(204, "")
+    json(conn |> put_status(:no_content), "")
   end
 end
