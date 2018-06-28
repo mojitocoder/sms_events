@@ -38,7 +38,8 @@ defmodule SmsEvents.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:kafka_ex, "~> 0.8.3"}
+      {:kafka_ex, "~> 0.8.3"},
+      {:snappy, git: "https://github.com/fdmanana/snappy-erlang-nif"}
     ]
   end
 end
