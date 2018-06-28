@@ -12,7 +12,12 @@ defmodule SmsEventsWeb.TwilioController do
 
   def sms_received(conn, param) do
     IO.inspect(param)
-    publish(Poison.encode!(param), @topic)
+
+    param
+    |> Map.put("AddOns", Poison.decode!(param["AddOns"]))
+    |> Poison.encode!()
+    |> publish(@topic)
+
     json(conn |> put_status(:no_content), "")
   end
 
